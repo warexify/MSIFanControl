@@ -46,7 +46,7 @@ errno_t EPHandleDisconnect(kern_ctl_ref ctlref, unsigned int unit, void *unitinf
     return 0;
 }
 
-// 监听服务并调用Hotpatch方法
+// Listen to the service and call the Hotpatch method
 errno_t MSIFanService::EPHandleWrite(kern_ctl_ref ctlref, unsigned int unit, void *userdata, mbuf_t m, int flags)
 {
     struct MSIECControl *ctrl;
@@ -71,7 +71,7 @@ errno_t MSIFanService::EPHandleWrite(kern_ctl_ref ctlref, unsigned int unit, voi
     return 0;
 }
 
-// 启动服务
+// Start the service
 bool MSIFanService::start(IOService *provider)
 {
     device = OSDynamicCast(IOACPIPlatformDevice, provider);
@@ -98,7 +98,7 @@ bool MSIFanService::start(IOService *provider)
     return true;
 }
 
-// 关闭服务
+// Shut down the service
 void MSIFanService::stop(IOService *provider)
 {
     IOLog("XFAN: Stop cn.lgs3137.msifanservice.ctl");

@@ -40,7 +40,7 @@ class ViewController: NSViewController {
         // Do any additional setup after loading the view.
     }
     
-    // 判断开关并恢复初始值
+    // Determine the switch and restore the initial value
     @IBAction func autoBtn(_ sender: Any) {
         if (autoBtn.state.rawValue == 1) {
             fan0.isEnabled = true
@@ -73,7 +73,7 @@ class ViewController: NSViewController {
     }
 
     @IBAction func enterBtn(_ sender: Any) {
-        // 简单判断输入
+        // Simply judge the input
         inputOk = 0
         checkInput(inputs: fan0.stringValue)
         checkInput(inputs: fan1.stringValue)
@@ -82,7 +82,7 @@ class ViewController: NSViewController {
         checkInput(inputs: fan4.stringValue)
         checkInput(inputs: fan5.stringValue)
 
-        // 转换格式
+        // Convert the format
         let d0 = String((fan0.stringValue as NSString).integerValue)
         let d1 = String((fan1.stringValue as NSString).integerValue)
         let d2 = String((fan2.stringValue as NSString).integerValue)
@@ -90,16 +90,16 @@ class ViewController: NSViewController {
         let d4 = String((fan4.stringValue as NSString).integerValue)
         let d5 = String((fan5.stringValue as NSString).integerValue)
 
-        // 判断并执行
+        // Judge and execute
         if (inputOk == 6) {
             showMsg(msg:shellTask([d0, d1, d2, d3, d4, d5]))
         }
         else {
-            showMsg(msg:"请输入0~100数字!")
+            showMsg(msg:"Please enter 0~100 numbers!")
         }
     }
 
-    // 简单校验输入是否符合0~100
+    // Simple check whether the input conforms to 0 to 100
     func checkInput(inputs:String) {
         let input = (inputs as NSString).integerValue
         if (0 <= input && input <= 100) {
@@ -107,7 +107,7 @@ class ViewController: NSViewController {
         }
     }
 
-    // 弹窗
+    // Pop the window
     func showMsg(msg:String) {
         let alert = NSAlert()
         alert.messageText = "MSIFanControl"
@@ -117,11 +117,11 @@ class ViewController: NSViewController {
         alert.runModal()
     }
 
-    // 执行Shell命令
+    // Execute the Shell command
     func shellTask(_ args: [String]) -> String {
         let task = Process()
         guard let path = Bundle.main.path(forResource: "MSIECControl",ofType:"") else {
-            return "失败!\nMSIECControl 丢失!"
+            return "Failed!\nMSIECControl is missing!"
         }
         task.launchPath = path
         task.arguments = args

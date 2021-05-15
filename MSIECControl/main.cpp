@@ -38,7 +38,7 @@ void sendctl(struct MSIECControl ctrl) {
 
 int main(int argc, char* argv[]) {
     if (argc != 7) {
-        printf("正确使用:\n%s 20 30 40 60 80 100\n", argv[0]);
+        printf("Use correctly:\n%s 20 30 40 60 80 100\n", argv[0]);
     }
     else {
         struct MSIECControl ctrl;

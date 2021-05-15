@@ -1,22 +1,22 @@
-# macOS Fan Control for 机械革命S1(MSI Laptop)
+# macOS Fan Control for Mechanical Revolution S1 (MSI Laptop)
 
-## 扣扣交流群：[45822629](https://jq.qq.com/?_wv=1027&k=5F5QsbT)
+## Deduction exchange group: [45822629](https://jq.qq.com/?_wv=1027&k=5F5QsbT)
 
 ## Features
 
 * SSDT-FANQ.dsl
-   * Hotpatch / ACPI补丁,手动编译后添加到EFI
+   * Hotpatch / ACPI patch, added to EFI after manual compilation
 
 * MSIFanService
-   * kext / 驱动服务,编译后添加到EFI
+   * kext / driver service, added to EFI after compilation
 
 * MSIECControl
-   * Program / 无GUI可执行二进制程序,编译后以命令形式执行
+   * Program / No GUI executable binary program, executed in command form after compilation
 
 * MSIFanControl
-   * App / GUI控制程序,目前还有Bug(设置后无效)
+   * App / GUI control program, there are currently bugs (invalid after setting)
 
 ## Change Log:
 
 - 2020.01.14
-	- macOS Fan Control for 机械革命S1(MSI Laptop).
+	- macOS Fan Control for Mechanical Revolution S1 (MSI Laptop).
